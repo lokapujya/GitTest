@@ -2,36 +2,7 @@
     <description>
         simple example build file
     </description>
-  <!-- set global properties for this build -->
-  <property name="src" location="src"/>
-  <property name="build" location="bin"/>
 
-    <path id="lib.path">
-        <fileset dir="${basedir}">
-            <include name="**/*.jar"/>
-        </fileset>
-    </path>
-	
-  <target name="init">
-    <!-- Create the time stamp -->
-    <tstamp/>
-    <!-- Create the build directory structure used by compile -->
-    <mkdir dir="${build}"/>
-  </target>
-
-  <target name="compile" depends="init"
-        description="compile the source "   >
-    <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}" classpathref="lib.path"/>
-  </target>
-
-	
-    <target name="test" depends="compile">
+    <target name="test">
     </target>
-
-  <target name="clean"
-        description="clean up" >
-    <!-- Delete the ${build} and ${dist} directory trees -->
-    <delete dir="${build}"/>
-  </target>
 </project>
